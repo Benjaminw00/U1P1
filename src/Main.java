@@ -22,12 +22,44 @@ public class Main {
         String numPeople = s.nextLine();
         int numPeopleConverted = Integer.parseInt(numPeople); //Get the initial information
 
-            double tipAmount = billConverted*((double) tipPercentConverted/100); //25-28 calculating all the costs using algebraic equations
+            double tipAmount = billConverted*((double) tipPercentConverted/100); //25-59 calculating all the costs using algebraic equations
             double totalBillCost = tipAmount + billConverted;
             double tipPerPerson = tipAmount/numPeopleConverted;
             double billPerPerson = totalBillCost/numPeopleConverted;
 
-        System.out.println("------------------------------"); //29-37 is outputting all the information
+                double temp = tipAmount*100; //30-36 rounding for tipAmount
+                int numTemp = (int) temp;
+                temp = temp-numTemp;
+                if (temp >= .5) {
+                numTemp = numTemp + 1;
+                }
+                tipAmount = (double) numTemp/100;
+            //
+                temp = totalBillCost*100; //38-44 rounding for totalBillCost
+                numTemp = (int) temp;
+                temp = temp-numTemp;
+                if (temp >= .5) {
+                numTemp = numTemp + 1;
+                }
+                totalBillCost = (double) numTemp/100;
+            //
+                temp = tipPerPerson*100; //46-52 rounding for tipPerPerson
+                numTemp = (int) temp;
+                temp = temp-numTemp;
+                if (temp >= .5) {
+                numTemp = numTemp + 1;
+                }
+                tipPerPerson = (double) numTemp/100;
+            //
+                temp = billPerPerson*100; //54-60 rounding for billPerPerson
+                numTemp = (int) temp;
+                temp = temp-numTemp;
+                if (temp >= .5) {
+                numTemp = numTemp + 1;
+                }
+                billPerPerson = (double) numTemp/100;
+
+        System.out.println("------------------------------"); //62-70 is outputting all the information
         System.out.println("Total Tip Amount: $" + tipAmount);
         System.out.println("------------------------------");
         System.out.println("Total Bill Cost: $" + totalBillCost);
